@@ -1,0 +1,18 @@
+{
+  "name": "cypress-e2e-framework",
+  "version": "1.0.0",
+  "description": "automatizacion de casos de prueba con cypress cucumber ",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "automatizacion",
+    "e2e",
+    "cypress",
+    "cucumber",
+    "test"
+  ],
+  "author": "Alejandro Sepulveda Palacio",
+  "license": "ISC"
+}
