@@ -1,4 +1,4 @@
-import {
+import {          /// Se importan las funciones que permiten implementar pasos de prueba en Cypress utilizando la sintaxis de Cucumber
     Given,
     When,
     Then,
@@ -25,6 +25,10 @@ Given("el Usuario esta en la pagina de inicio de sesion", () => {
     //cy.get('div#dashboard').should('be.visible');
   });
   
-
-
+/// SEGUNDO ESCENARIO 
+  
+  Then("Se debe mostrar un mensaje de error indicando que el nombre de usuario o la contraseña son incorrectos", () => {
+    cy.url().should('eq', 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+    cy.get('.oxd-alert').should('be.visible').and('contain.text', 'Invalid credentials');
+  });
 
