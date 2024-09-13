@@ -8,7 +8,7 @@ class LoginPage {
 
     // Método para llenar el campo de nombre de usuario
   fillUsername(username) {
-    cy.get('input[name="username"]').type(username);
+    cy.get('input[name="username"]').type(username);  // get busca un elemento tipo input que tenga de nombre username y el type significa que va a escribir dentro del campo html
   }
 
   // Método para llenar el campo de contraseña
@@ -28,7 +28,7 @@ class LoginPage {
 
   // Método para obtener el mensaje de error
   getErrorMessage() {
-    return cy.get('p.oxd-text.oxd-text--p.oxd-alert-content-text'); // Ajusta el selector según el HTML real
+    return cy.get('p.oxd-text.oxd-text--p.oxd-alert-content-text'); // selleciona el p. 
   }
 }
 
