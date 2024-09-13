@@ -23,7 +23,7 @@ class LoginPage {
 
    // Método para obtener el elemento del dashboard
    getDashboard() {
-    return cy.get('div#dashboard'); // Ajusta el selector según el HTML real
+    return cy.get('h6.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module'); // Selecciona el h6 con las clases específicas
   }
 
   // Método para obtener el mensaje de error

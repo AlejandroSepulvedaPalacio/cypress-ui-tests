@@ -15,7 +15,7 @@ Given("el Usuario esta en la pagina de inicio de sesion", () => {
   loginPage.visit();  // se accede al metodo visit para visitar la pagina 
 });
 
-/*When("El Usuario ingresa su nombre de usuario {string} y password {string}, y el usuario hace clic en el boton Login", (username, password) => {
+When("El Usuario ingresa su nombre de usuario {string} y password {string}, y el usuario hace clic en el boton Login", (username, password) => {
   loginPage.fillUsername(username);    // se accede al metodo fillUsername para ingresar el usuario 
   loginPage.fillPassword(password);    // se accede al metodo fillpassword para ingresar la contraseña 
   loginPage.submit();                  // se accede al metodo submit para hacer clic en el boton 
@@ -23,8 +23,8 @@ Given("el Usuario esta en la pagina de inicio de sesion", () => {
 
 Then("El usuario debe ser redirigido a la pagina de inicio principal y debe aparecer un dashboard principal", () => {
   cy.url().should('include', '/dashboard');
-  loginPage.getDashboard().should('be.visible');
-});*/
+  loginPage.getDashboard().should('be.visible').and('contain.text', 'Dashboard');
+});
 
 /*/// SEGUNDO ESCENARIO
 
