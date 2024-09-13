@@ -5,7 +5,7 @@ import {          /// Se importan las funciones que permiten implementar pasos d
 } from "@badeball/cypress-cucumber-preprocessor";
 
 
-import LoginPage from 'cypress/e2e/page_objects/loginPage.js/'; // Se importa la clase LoginPage para usar sus metodos
+import LoginPage from '../page_objects/loginPage.js'; // Se importa la clase LoginPage para usar sus metodos
 
 const loginPage = new LoginPage();   // se crea el objeto loginPage de la clase LoginPage para acceder al los metodos de la clase 
 

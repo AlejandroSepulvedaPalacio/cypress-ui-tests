@@ -1,4 +1,3 @@
-
 /// se crea la clase loginPage para definir los metodos relacionados a inicio de sesion, usuario, password, boton de inicio de sesion, pagina principal y mensaje de error.
 class LoginPage {
 
