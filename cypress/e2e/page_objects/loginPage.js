@@ -28,7 +28,7 @@ class LoginPage {
 
   // Método para obtener el mensaje de error
   getErrorMessage() {
-    return cy.get('.oxd-alert'); // Ajusta el selector según el HTML real
+    return cy.get('p.oxd-text.oxd-text--p.oxd-alert-content-text'); // Ajusta el selector según el HTML real
   }
 }
 
