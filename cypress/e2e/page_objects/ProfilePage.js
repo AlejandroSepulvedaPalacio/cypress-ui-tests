@@ -9,20 +9,23 @@ class ProfilePage{
         cy.get('a[href="/web/index.php/pim/updatePassword"]').click();
     }
 
-    fillCurrentPassword(password) {
+    fillCurrentPassword(password) {  ////input[@type="password"]  (//input[@type="password"])[1]  ctl* F
         // Selecciona el campo de entrada para la contraseña actual usando la clase o tipo
-        cy.get('input.oxd-input[type="password"]').type(password); 
+        cy.contains('label', 'Current Password')
+        cy.get('input[type="password"]').eq(0).type(password);
 
     }
 
     fillNewPassword(password) {
+         cy.contains('label', 'Password')
          // Usa .eq() si hay más de un campo de tipo password
-        cy.get('input.oxd-input[type="password"]').eq(1).type(password); // get busca un elemento tipo input que tenga de nombre currentPassword y el type significa que va a escribir dentro del campo html
+         cy.get('input[type="password"]').eq(1).type(password); // get es un selector que busca y nos trae un elemento tipo input que tenga de nombre NewPassword y el type significa que va a escribir dentro del campo html
     }
 
     
     fillConfirmPassword(password) {
-        cy.get('input.oxd-input[type="password"]').eq(2).type(password); 
+        cy.contains('label', 'Confirm Password')
+        cy.get('input[type="password"]').eq(2).type(password); 
     } 
     
     submitChangePassword() {
@@ -30,10 +33,10 @@ class ProfilePage{
     }
     
     getSuccessMessage() {
-        return cy.get('.success-message'); 
+        return cy.get('.oxd-text.oxd-text--p.oxd-text--toast-message.oxd-toast-content-text');
+        //return cy.get('successfully saved'); 
       }
 
 }
-
 
 export default ProfilePage;

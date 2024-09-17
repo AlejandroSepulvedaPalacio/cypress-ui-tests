@@ -6,6 +6,7 @@ import ProfilePage from '../page_objects/ProfilePage.js'; // Se importa la clase
 const loginPage = new LoginPage();                        // se crea el objeto loginPage de la clase LoginPage para acceder al los metodos de la clase 
 const profilePage = new ProfilePage();                    // se crea el objeto profilePage de la clase profilePage para acceder al los metodos de la clase 
 
+// TERCER ESCENARIO
 
 Given("El Usuario esta logueado en la pagina principal", () => {
     loginPage.visit();
@@ -22,8 +23,9 @@ When("El Usuario selecciona en el nombre de su usario y selecciona la opcion Cha
     profilePage.fillNewPassword(newPassword);
     profilePage.fillConfirmPassword(confirmPassword);
     profilePage.submitChangePassword();
+    
 });
   
-Then("la contraseña debe ser cambiada con exito y el Usuario deve ver un mensaje de confirmacion", () => {
-    profilePage.getSuccessMessage().should('be.visible').and('contain.text', 'Password changed successfully');
+Then("la contraseña debe ser cambiada con exito y el Usuario debe ver un mensaje de confirmacion", () => {
+    profilePage.getSuccessMessage().should('be.visible').and('contain.text', 'Successfully Saved');
 });
