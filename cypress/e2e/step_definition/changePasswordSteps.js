@@ -13,7 +13,7 @@ Given("El Usuario esta logueado en la pagina principal", () => {
     loginPage.fillUsername('Admin');
     loginPage.fillPassword('admin123');
     loginPage.submit();
-    cy.url().should('include', '/dashboard'); // Asegúrate de que estás en la página principal
+    cy.url().should('include', '/dashboard'); // Asegura de que estás en la página principal
 });
   
 When("El Usuario selecciona en el nombre de su usario y selecciona la opcion Change password y el Usuario hace clic en el Change password, y el Usuario ingresa contraseña actual {string}, y el Usuario ingresa nueva contraseña {string}, y el Usuario confirma la nueva contraseña {string}, y el Usuario hace clic en el boton Save", (currentPassword, newPassword, confirmPassword) => {

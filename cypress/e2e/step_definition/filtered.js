@@ -6,16 +6,16 @@ const loginPage = new LoginPage();                        // se crea el objeto l
 const filteredPage = new FilteredPage();                  // se crea el objeto filteredPage  de la FilteredPage para acceder al los metodos de la clase 
 
 ///CUARTO ESCENARIO 
-
-Given("El Usuario esta logueado en la pagina principal", () => {
+/// Background para loguearse 
+/*Given("El Usuario esta logueado en la pagina principal", () => {
     loginPage.visit();
     loginPage.fillUsername('Admin');
     loginPage.fillPassword('admin123');
     loginPage.submit();
-    cy.url().should('include', '/dashboard'); // Asegúrate de que estás en la página principal
-});
+    cy.url().should('include', '/dashboard'); // Asegura de que estás en la página principal
+});*/
 
-When("El Usuario hace clic en la seccion Admin y el Usuario ingresa el username {string} , y el Usuario selecciona el menú despegable de Rol de usuario y hace clic en la opcion administracion, y el Usuario ingresa el nombre del empleado {string} y el Usuario selecciona el menu despegable de Estado y hace clic en la opcion Activado y hace clic en buscar", (username, 
+When("El Usuario hace clic en la seccion Admin y el Usuario ingresa el username {string}, y el Usuario selecciona el menú despegable de Rol de usuario y hace clic en la opcion administracion, y el Usuario ingresa el nombre del empleado {string} y hace clic en el nombre filtrado y el Usuario selecciona el menu despegable de Estado y hace clic en la opcion Activado y hace clic en buscar", (username, 
     employeename)=> {
         
     filteredPage.openAdminSection();

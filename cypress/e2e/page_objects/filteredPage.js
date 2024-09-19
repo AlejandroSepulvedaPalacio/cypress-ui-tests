@@ -1,8 +1,8 @@
 
-
 class FilteredPage {
     openAdminSection(){
-        cy.get('.oxd-text.oxd-text--span.oxd-main-menu-item--name').click();
+        //cy.get('.oxd-text.oxd-text--span.oxd-main-menu-item--name').click();
+        cy.contains('span', 'Admin').click();
 
     }
 
@@ -18,7 +18,7 @@ class FilteredPage {
 
     getUserRoleAdmin(){
 
-        cy,get('oxd-select-text.oxd-select-text--active').click();
+        cy.get('.oxd-select-text.oxd-select-text--active').click();
     }
 
 
