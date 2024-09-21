@@ -23,15 +23,16 @@ When("El Usuario hace clic en la seccion Admin y el Usuario ingresa el username 
     filteredPage.openUserRole();
     filteredPage.getUserRoleAdmin();
     filteredPage.fillEmployeeName(employeename);
-    filteredPage.openStatus();
-    filteredPage.getOpenStatus();
+    //filteredPage.openStatus();
+    //filteredPage.getOpenStatus();
     filteredPage.getSubmit();
 
 
 });
 
-Then("Debe aparecer una seccion con la informacion buscada", () => {
+Then("Debe aparecer una seccion con la informacion buscada Record Found", () => {
 
     filteredPage.getSection();
-    
+    cy.url().should('include', '/web/index.php/admin/viewSystemUsers');
+
   }); 
