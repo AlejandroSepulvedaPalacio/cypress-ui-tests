@@ -1,5 +1,17 @@
 {
 
+
+    "json": {
+        "enabled": true,
+        "output": "jsonlogs/log.json",
+        "formatter":"./cypress/report/cucumber-json-formatter"
+      },
+
+      "messages":{
+        "enabled": true,
+        "output": "jsonlogs/messages.ndjson"
+      },
+
     "stepDefinitions": [
         "cypress/e2e/step_definition/*.{js,ts}"
     ]
