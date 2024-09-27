@@ -4,7 +4,8 @@
   "description": "automatizacion de casos de prueba con cypress cucumber ",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "generate-report": "node cypress/report/cucumber-html-report.js"
   },
   "keywords": [
     "automatizacion",
@@ -26,5 +27,10 @@
   "multi-reporter-config":
   {
     "reporterEnabled": "cypress-parallel/json-stream.reporter.js, cypress-parallel/simple-spec.reporter.js"
+    
   }
+
+  
+
+
 }
