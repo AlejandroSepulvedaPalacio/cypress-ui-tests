@@ -1,0 +1,37 @@
+trigger:
+  - main  # Configura el trigger para que se ejecute en cambios en la rama main
+
+pool:
+  vmImage: 'ubuntu-latest'  # Usa la última imagen de Ubuntu
+
+stages:
+  - stage: Test
+    jobs:
+      - job: CypressTests
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '22.x'  # Usa la versión de Node que necesites
+            displayName: 'Instalar Node.js'
+
+          - script: |
+              npm install
+            displayName: 'Instalar dependencias'
+
+          - script: |
+              npm run cy:run
+            displayName: 'Ejecutar pruebas de Cypress'
+
+          - task: PublishTestResults@2
+            condition: succeededOrFailed()
+            inputs:
+              testResultsFormat: 'JUnit'
+              testResultsFiles: '**/results/cypress-*.xml'
+            displayName: 'Publicar resultados de pruebas'
+
+          - task: PublishCodeCoverageResults@1
+            condition: succeededOrFailed()
+            inputs:
+              codeCoverageTool: 'cobertura'
+              summaryFileLocation: '**/coverage/cobertura-coverage.xml'
+            displayName: 'Publicar cobertura de código'
