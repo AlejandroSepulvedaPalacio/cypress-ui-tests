@@ -6,7 +6,9 @@ class ProfilePage{
 
     openChangePasswordModal() {
         // Implementa elemento HTML abrir el modal de cambio de contraseña
-        cy.get('a[href="/web/index.php/pim/updatePassword"]').click();
+        cy.get('a[href="/pim/updatePassword"]').click();   //<a href="/pim/updatePassword" role="menuitem" class="oxd-userdropdown-link">Change Password</a>
+        //cy.visit('https://opensource-demo.orangehrmlive.com/dashboard/index');
+        
     }
 
     fillCurrentPassword(password) {  ////input[@type="password"]  (//input[@type="password"])[1]  ctl* F

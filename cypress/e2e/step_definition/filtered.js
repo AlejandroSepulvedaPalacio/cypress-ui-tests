@@ -33,6 +33,7 @@ When("El Usuario hace clic en la seccion Admin y el Usuario ingresa el username 
 Then("Debe aparecer una seccion con la informacion buscada Record Found", () => {
 
     filteredPage.getSection();
-    cy.url().should('include', '/web/index.php/admin/viewSystemUsers');
+    //cy.url().should('include', '/web/index.php/admin/viewSystemUsers');
+    cy.url().should('include', '/admin/viewSystemUsers');
 
   }); 

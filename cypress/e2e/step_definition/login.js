@@ -29,7 +29,7 @@ Then("El usuario debe ser redirigido a la pagina de inicio principal y debe apar
 /// SEGUNDO ESCENARIO
 
 Then("Se debe mostrar un mensaje de error indicando que el nombre de usuario o la contraseña son incorrectos", () => {
-  cy.url().should('eq', 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+  cy.url().should('eq', 'https://opensource-demo.orangehrmlive.com/auth/login');
   loginPage.getErrorMessage().should('be.visible').and('contain.text', 'Invalid credentials');
 }); 
 

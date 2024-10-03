@@ -3,7 +3,8 @@ class LoginPage {
 
     // Método para visitar la página de inicio de sesión
     visit() {
-      cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+      //cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+      cy.visit('https://opensource-demo.orangehrmlive.com/auth/login');
     }
 
     // Método para llenar el campo de nombre de usuario
