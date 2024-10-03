@@ -44,6 +44,17 @@ steps:
     npx cypress run --env TAGS='@filtradoBusqueda'  # Ejecutar pruebas de filtrado y búsqueda
   displayName: 'Run filter and search scenarios'
 
+
+# Crear el directorio para los reportes
+- script: |
+    mkdir -p cypress/reports  # Crear el directorio si no existe
+  displayName: 'Create reports directory'
+
+# Ejecutar pruebas y generar el reporte
+- script: |
+    npx cypress run --reporter cypress-html-reporter --reporter-options "reportDir=cypress/reports,overwrite=false,html=true,json=false"
+  displayName: 'Run tests and generate HTML report'
+
 # Publicar el reporte como artefacto
 - publish: cypress/reports
   artifact: cypress-reports
