@@ -26,14 +26,7 @@
     "esbuild": "^0.23.1",
     "multiple-cucumber-html-reporter": "^3.7.0"
   },
-
-  "multi-reporter-config":
-  {
+  "multi-reporter-config": {
     "reporterEnabled": "cypress-parallel/json-stream.reporter.js, cypress-parallel/simple-spec.reporter.js"
-    
   }
-
-  
-
-
 }
