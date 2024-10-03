@@ -43,3 +43,8 @@ steps:
 - script: |
     npx cypress run --env TAGS='@filtradoBusqueda'  # Ejecutar pruebas de filtrado y búsqueda
   displayName: 'Run filter and search scenarios'
+
+# Publicar el reporte como artefacto
+- publish: cypress/reports
+  artifact: cypress-reports
+  displayName: 'Publish HTML Reports'  
