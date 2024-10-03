@@ -3,6 +3,10 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
+parameters:
+  - name: tags
+    type: string
+    default: '@smoke'  # Tag por defecto
 
 trigger:
 - master
@@ -20,7 +24,22 @@ steps:
     npm install
   displayName: 'npm install'
   
+# Ejecutar inicio de sesión exitoso
 - script: |
-    npx cypress run
-  displayName: 'Run scenarios'
+    npx cypress run --env TAGS='@inicioExitoso'  # Ejecutar pruebas de inicio exitoso
+  displayName: 'Run successful login scenarios'
 
+# Ejecutar inicio de sesión fallido
+- script: |
+    npx cypress run --env TAGS='@inicioFallido'  # Ejecutar pruebas de inicio fallido
+  displayName: 'Run failed login scenarios'
+
+# Ejecutar cambio de contraseña
+- script: |
+    npx cypress run --env TAGS='@cambioPassword'  # Ejecutar pruebas de cambio de contraseña
+  displayName: 'Run change password scenarios'
+
+# Ejecutar filtrado y búsqueda
+- script: |
+    npx cypress run --env TAGS='@filtradoBusqueda'  # Ejecutar pruebas de filtrado y búsqueda
+  displayName: 'Run filter and search scenarios'

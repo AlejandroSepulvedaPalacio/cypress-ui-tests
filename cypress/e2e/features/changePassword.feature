@@ -1,3 +1,4 @@
+@cambioPassword
 Feature: CAMBIO DE PASSWORD
 
 

@@ -1,3 +1,4 @@
+@filtradoBusqueda
 Feature: FILTRADO Y BUSQUEDA
 
     Background:
