@@ -27,3 +27,5 @@ Este repositorio contiene un conjunto de pruebas automatizadas de interfaz reali
 
 ```bash
 npm install
+
+👤 Autor Santiago Alejandro Sepúlveda Palacio |QA Engineer| 📧 santiagosepulveda.engineer@gmail.com
